@@ -7,3 +7,5 @@
 # used SCP command to transfer
 # At the end I catch the num of Bytes form the output of the SCP cmd,  calculate the sum of them and print it
 
+scp -r $1 server2:$2 >> /dev/null && \
+   du -cb $1 $2 | grep total | awk '{ print $1; }'%
